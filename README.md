@@ -1,0 +1,2 @@
+# pythonkodok
+python kodok mixat
