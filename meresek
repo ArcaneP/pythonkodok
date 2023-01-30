@@ -1,0 +1,39 @@
+def f (x):
+    print(f"\n {x}. feladat")
+
+with open("meresek.txt") as inp:
+    sor = [i.strip() for i in inp.readlines()]
+adatok = [i.split(" ") for i in sor]
+
+print(adatok)
+
+f(2)
+print(f"A mérés során {len(adatok)} jármű adatait rögzítették.")
+
+f(3)
+
+counter = 0
+ido = 9
+
+for adat in adatok:
+    if int(adat[5]) < ido:
+        counter+=1
+
+print(f"9 óra előtt {counter} , ennyi jármű haladt el a végponti mérőnél:")
+
+
+f(4)
+
+kezdobe = (input ("Adjon meg egy óra és perc értéket!"))
+counter1 = 0
+kezdoOra = kezdobe[:1] #3
+kezdoPerc  = kezdobe[2:4] #20
+print(f"kezdoOra: {kezdoOra}")
+print(f"kezdoPerc: {kezdoPerc}")
+
+for adat in adatok:
+
+    if adat[1] == kezdoOra and adat[2] == kezdoPerc:
+        counter1 +=1
+
+print(f"a. A kezdeti méréspontnál elhaladt járművek száma: {counter1}")
